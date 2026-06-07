@@ -1,12 +1,15 @@
 import { projects } from "@/lib/projects";
 import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/reveal";
 
 export function Work() {
   return (
     <section id="work" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-      <SectionHeading>Selected Work</SectionHeading>
+      <Reveal>
+        <SectionHeading>Selected Work</SectionHeading>
+      </Reveal>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <article
             key={project.title}
@@ -72,7 +75,7 @@ export function Work() {
             </div>
           </article>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

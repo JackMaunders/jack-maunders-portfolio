@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/reveal";
 
 const cards = [
   { label: "Email", value: site.email, href: `mailto:${site.email}` },
@@ -11,9 +12,11 @@ const cards = [
 export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-      <SectionHeading>Contact</SectionHeading>
+      <Reveal>
+        <SectionHeading>Contact</SectionHeading>
+      </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((card) => (
           <a
             key={card.label}
@@ -29,7 +32,7 @@ export function Contact() {
             </p>
           </a>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }
