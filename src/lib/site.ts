@@ -15,5 +15,4 @@ export const site = {
     handle: "in/jack-maunders",
     url: "https://www.linkedin.com/in/jack-maunders",
   },
-  cvPath: "/jack-maunders-cv.pdf",
 } as const;
