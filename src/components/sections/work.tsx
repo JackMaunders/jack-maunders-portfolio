@@ -16,14 +16,30 @@ export function Work() {
             className="flex flex-col overflow-hidden rounded-lg border border-border bg-card"
           >
             <div className="flex aspect-4/3 items-center justify-center bg-background">
-              {/* Need to decide what to do with no screenshot, or if they should be required */}
               {project.screenshot ? (
-                <img
-                  src={project.screenshot}
-                  alt={`${project.title} screenshot`}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
+                typeof project.screenshot === "string" ? (
+                  <img
+                    src={project.screenshot}
+                    alt={`${project.title} screenshot`}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={project.screenshot.light}
+                      alt={`${project.title} screenshot`}
+                      loading="lazy"
+                      className="h-full w-full object-cover dark:hidden"
+                    />
+                    <img
+                      src={project.screenshot.dark}
+                      alt={`${project.title} screenshot`}
+                      loading="lazy"
+                      className="hidden h-full w-full object-cover dark:block"
+                    />
+                  </>
+                )
               ) : (
                 <span className="text-xs tracking-[0.2em] text-muted uppercase">
                   Screenshot
