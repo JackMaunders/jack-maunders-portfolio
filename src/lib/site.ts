@@ -3,10 +3,10 @@ export const site = {
   name: "Jack Maunders",
   role: "Software Engineer",
   tagline:
-    "I build well-tested digital products end to end — from full-stack feature work to keeping it all running reliably in production.",
+    "I build well-tested digital products end to end, from full-stack feature work to keeping it all running reliably in production.",
   about: [
     "I'm a software engineer with nearly a decade of experience, building digital experiences and SaaS products across teams of all sizes.",
-    "My work spans the full stack and, more recently, site reliability — I care about shipping well-tested features and keeping them running smoothly for the people who depend on them. I like communicating ideas clearly and helping teams move faster together.",
+    "My work spans the full stack, with a more recent focus on site reliability. I care about shipping well-tested features and keeping them running smoothly for the people who depend on them. I communicate ideas clearly and enjoy helping teams ship with confidence.",
   ],
   url: "https://jackmaunders.com",
   email: "me@jackmaunders.com",
