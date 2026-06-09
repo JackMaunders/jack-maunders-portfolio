@@ -49,7 +49,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Respect users who ask for less motion. */
+/* Hide reveal children before GSAP runs so a cold load doesn't flash the
+   final content first */
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  [data-reveal] > * {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

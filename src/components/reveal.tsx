@@ -27,25 +27,29 @@ export function Reveal<T extends ElementType = "div">({
   useGSAP(
     () => {
       gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(Array.from(ref.current!.children), {
-          autoAlpha: 0,
-          y: 24,
-          duration: 0.7,
-          ease: "power3.out",
-          stagger,
-          scrollTrigger: {
-            trigger: ref.current!,
-            start: "top 85%",
-            once: true,
+        gsap.fromTo(
+          Array.from(ref.current!.children),
+          { autoAlpha: 0, y: 24 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            stagger,
+            scrollTrigger: {
+              trigger: ref.current!,
+              start: "top 85%",
+              once: true,
+            },
           },
-        });
+        );
       });
     },
     { scope: ref },
   );
 
   return (
-    <Tag ref={ref} {...rest}>
+    <Tag ref={ref} data-reveal="" {...rest}>
       {children}
     </Tag>
   );
