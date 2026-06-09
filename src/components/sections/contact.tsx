@@ -6,7 +6,7 @@ const cards = [
   { label: "Email", value: site.email, href: `mailto:${site.email}` },
   { label: "GitHub", value: site.github.handle, href: site.github.url },
   { label: "LinkedIn", value: site.linkedin.handle, href: site.linkedin.url },
-  { label: "CV", value: "Download PDF", href: site.cvPath },
+  // { label: "CV", value: "Download PDF", href: site.cvPath },
 ];
 
 export function Contact() {
@@ -16,7 +16,7 @@ export function Contact() {
         <SectionHeading>Contact</SectionHeading>
       </Reveal>
 
-      <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Reveal className="grid gap-4 sm:grid-cols-3">
         {cards.map((card) => (
           <a
             key={card.label}
