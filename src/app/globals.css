@@ -52,7 +52,8 @@ body {
 /* Hide reveal children before GSAP runs so a cold load doesn't flash the
    final content first */
 @media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
-  [data-reveal] > * {
+  [data-reveal] > *,
+  [data-gsap-hidden] {
     opacity: 0;
     visibility: hidden;
   }

@@ -86,6 +86,8 @@ export function Hero() {
           delay: 1.5,
         });
 
+        gsap.set("[data-gsap-hidden]", { autoAlpha: 1 });
+
         return () => split.revert();
       });
     },
@@ -100,13 +102,17 @@ export function Hero() {
     >
       <div
         aria-hidden
+        data-gsap-hidden
         className="pointer-events-none absolute inset-0 z-0"
         style={{ maskImage: graphMask, WebkitMaskImage: graphMask }}
       >
         <NodeGraph />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-24">
+      <div
+        data-gsap-hidden
+        className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-24"
+      >
         <p
           ref={eyebrow}
           className="mb-4 text-sm font-medium tracking-[0.2em] text-muted uppercase"
